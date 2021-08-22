@@ -1,0 +1,176 @@
+<!-- <h1>{{AppName}}</h1> -->
+
+<!--<h3>{{abc()}}</h3>
+<h3>{{obj}} -- {{obj.name}} , {{obj.url}}</h3>
+<h3>Array data binding using interpolating -- {{arr[0]}}</h3>
+<h3>using window object by interpolation -- {{siteurl}}</h3>
+<h1><app-login></app-login></h1>  
+<h1><app-signup></app-signup></h1> 
+<h1><app-creat-member></app-creat-member></h1>  -->
+
+
+<!-- <button (click)="btnclick('name')" (mouseover)="mouseoverevnt('mouse in')">
+    click here
+</button> -->
+
+<!-- Read or set data to a textbox in button click -->
+<!-- <input type="text" #txt/>
+    <br><br>
+    <button (click)="btnclick(txt.value)"> click here </button>
+    <br><br>
+    <h1> {{name}}</h1> -->
+
+<!-- Prooerty binding vs interpolation -->
+<!-- <input type="text" #txtbox1 disabled={{isdisabled}}/>
+    <br><br>
+    <input type="text" #txtbox2 [disabled]="isdisabled"/>
+    <br><br>
+    <button (click)="btnclick('Test')"> Click here.</button> -->
+
+<!-- Conditional statements in Angular -->
+<!-- if and else -->
+<!-- <h2 *ngIf="show; else elseblock">
+            if block
+        </h2>
+        <ng-template #elseblock>
+            else block
+        </ng-template> -->
+
+<!-- if and else with then -->
+<!-- <div *ngIf="show; then ifblock else elseblock"> </div>
+        <ng-template #ifblock>
+            if block
+        </ng-template>
+        <ng-template #elseblock>
+            else block
+        </ng-template>  -->
+
+<!-- property binding in ng-template using [ngif] to achive elseif  -->
+<!-- <ng-template [ngIf]="show =='red'">            
+            <h1>
+                Reb block
+            </h1>
+            Reb block
+        </ng-template>
+        <ng-template [ngIf]="show =='blue'">
+            <h1>
+                blue block
+            </h1>
+        </ng-template> -->
+
+<!-- Switch case   -->
+<!-- <div [ngSwitch]="PickColor">
+    <h3 style="color: red;" *ngSwitchCase="'red'">
+        red color
+    </h3>
+    <h3  style="color: green;" *ngSwitchCase="'green'">
+        green color
+    </h3>
+</div> -->
+
+<!--For loops  -->
+<!-- <Table>
+    <tr *ngFor="let item of objarray">
+        <td>
+            {{item.name}}
+        </td>
+    </tr>
+</Table> -->
+
+<!--Angular Forms -->
+<!-- First import @angular/forms dirctive in app.module to use angular forms -->
+<!-- <form #simForm="ngForm" (ngSubmit)="getUser(simForm.value)">
+    <input type="text" ngModel name="user name" placeholder="Enter name" /><br><br>
+    <input type="text" ngModel name="user age" placeholder="Enter age" /><br><br>
+    <button>        click here    </button>
+</form> -->
+
+<!--Form example 2 -->
+<!-- <form #Form2="ngForm" (ngSubmit)=getUser(Form2.value)>
+    <input #txt1 type="text" ngModel placeholder="Name" name="User name"/>
+    <input #txt2 type="text" ngModel placeholder="age" name="User age"/>
+    <button>
+        Click here
+    </button>
+</form> -->
+
+<!--Header and Footer  -->
+<!-- Adding two separate components for both header and footer -->
+<app-header></app-header>
+<app-footer></app-footer>
+
+<!-- Style binding -->
+<!-- this is effective way to bind the style dynamically compare to conventionally applying style. -->
+<!-- <h2 style="text-align:center; color: brown;"> Style binding </h2>
+<h4 style="color: blue; text-align: center;">Applying style as regular conventional way</h4>
+<h4  [style.color]="'red'" [style.text-align]="'center'">Applying style using style binding</h4>
+<h4  [style.color]="stylecolor" [style.text-align]="styletextalign">Applying style using dynamic style binding</h4>
+<h4  [style.color]="stylecolor" [style.text-align]="styletextalign">Changing text color using dynamic style binding on button click</h4>
+<button (click)="changebtncolor()"  style="margin-left: 40%;margin-right: 40%; width: 20%;">
+Click here to change the text color
+</button>
+<h4 [style.color]="err?'red':'green'"[style.text-align]="'center'" > Conditional styling</h4> -->
+
+<!-- Two way data binding -->
+<!-- [(ngModel)] -->
+<!-- [(This is called banana brackets)] -->
+<!--  this ngModel is combination of property binding [] and event binding() -->
+<!--  to use this ng model we have to import Formsmodule -->
+<!-- 
+<input  [(ngModel)]='data' />
+<h2 >{{data}}</h2> -->
+
+<!-- Pipes -->
+<!-- This is nonting but changing the out data int required way -->
+<!-- <div>{{ data | lowercase }}</div>
+<div>{{ data | uppercase }}</div>
+<div>{{ num | percent  }}</div>
+<div>{{ num | date  }}</div>
+
+parameterised pipies
+<div>{{ num | percent : '2.2-3'  }}</div>
+<div>{{ num | date : 'short' }}</div>
+<div>{{ num | currency : 'INR' }}</div>
+
+Pipe chaining
+<div>{{ num | date : 'long' | uppercase }} </div>
+<div>{{ num | date : 'long' | lowercase }} </div>
+<div>{{ num | date | lowercase }} </div> -->
+
+<!-- Angular Router -->
+<!-- this is a machanism used to navigation between components and sub components. 
+This is a Singleton.
+Router module will need to import in application - @angular/router.
+ we need to creatre a router array with all the routes in routing module. -->
+
+<!-- component routing or primary outlet -->
+<!-- import router module and add path and component in router array in router module -->
+<router-outlet></router-outlet>
+
+<!-- multiple router outlet or secondary outlet -->
+<router-outlet name="roter1"></router-outlet>
+<!-- Example url -->
+<!-- http://localhost:4200/loans(router name:path) -->
+<!-- http://localhost:4200/loans(router1:members) -->
+
+<!-- roterLink -->
+<!-- it is used to provide links in template or view or html file. -->
+<!-- Ex:  -->
+<!-- <a [routerLink]="['/Home']">Go To Users</a>
+<table>
+    <th>ClientID</th>
+    <th>Name</th>
+    <th>Address</th>
+    <tr *ngFor="let client of clientArray">
+        <td> {{ client.clientId }}</td>
+        <td> {{ client.Name }}</td>
+        <td> {{ client.Address }}</td>
+        <td>
+             Static link 
+            <a [routerLink]="['/Home']"> Edit-Static link</a> |
+             Dyanamic link - in this link we are passing user id in url 
+            <a [routerLink]="['/Home',client.clientId]"> Edit-Dynamic link</a> |
+            <a [routerLink]="['/Home',client.Name,'/addnew']">Multiple param passing in url - dynamic link</a>
+        </td>
+    </tr>
+</table> -->

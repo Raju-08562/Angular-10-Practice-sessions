@@ -1,0 +1,35 @@
+<h1 style="text-align: center; color: black;background-color: cadetblue;">Reactive Form</h1>
+<h2 style="text-align: center; color: black;background-color: cadetblue;">Template From</h2>
+<form [formGroup]="loanDetails" style="background-color: burlywood;">
+    Name : <input type="text" formControlName="loanName"> <br><br>
+    Description : <textarea formControlName="loanDescription"></textarea> <br><br>
+    Type : <select formControlName="loantype">
+        <option>
+            Premium
+        </option>
+        <option>
+            Normal
+        </option>
+    </select> <br><br>
+    Terms And Conditions : <input type="checkbox" formControlName="TermsAndConditions"><br><br>
+    <button (click)="GetFormValues()" [disabled]="!loanDetails.valid"> Click Here</button>
+</form>
+<hr>
+<h2 style="text-align: center; color: black;background-color: cadetblue;"> Form Builder</h2>
+<form [formGroup]="loanFormUsingBuilder" style="background-color: burlywood;">
+
+    <div>
+        <label> First Name :</label>
+        <input type="text" formControlName="fname"> <span> &nbsp;</span>
+        <button (click)="GetFormValues()"> Form Builder button</button>
+    </div>
+</form>
+<h2 style="text-align: center; color: black;background-color: bisque;"> Form states</h2>
+<div class="FormStates">
+    <div>
+        <label> First Name :</label>
+        <input type="text" formControlName="fname"> <span> &nbsp;</span>
+        <button (click)="Formstates()"> Form states log in console</button>
+    </div>
+
+</div>
