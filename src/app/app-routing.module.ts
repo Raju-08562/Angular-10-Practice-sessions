@@ -15,7 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { ResolveGuard } from './resolve.guard';
 import { SignupComponent } from './users/signup/signup.component';
 import { UsersModule } from './users/users.module';
-import {LoandetailsReactiveComponent} from './loandetails-reactive/loandetails-reactive.component'
+import { LoandetailsReactiveComponent } from './loandetails-reactive/loandetails-reactive.component'
 
 
 const routes: Routes = [
@@ -33,7 +33,7 @@ const routes: Routes = [
   {
     path: 'Home',
     //redirectTo
-    redirectTo: 'loans' // This is the path to redirect
+    redirectTo: 'loans' // This is the path to redirect.
   },
   {
     path: 'loans',
@@ -52,8 +52,8 @@ const routes: Routes = [
     //Resolved data is loaded before route is activated.
     path: 'loans',
     component: LoansComponent,
-    resolve:{
-      data : ResolveGuard
+    resolve: {
+      data: ResolveGuard
 
     }
   },
@@ -76,8 +76,8 @@ const routes: Routes = [
     children:
       [
         {
-          path: '',component: AdminComponent    
-        }     
+          path: '', component: AdminComponent
+        }
         // ,
         // {
         //   path: '',canActivateChild: [AdminDeleteGuardGuard],children: [{ path: 'delete', component: AdminDeleteComponent }]
@@ -89,15 +89,15 @@ const routes: Routes = [
 
   },
   {
-    path:'lHome',
-    canDeactivate:[CanDeactivatechangesGuard],
-    component:LoansComponent
+    path: 'lHome',
+    canDeactivate: [CanDeactivatechangesGuard],
+    component: LoansComponent
   },
   {
     path: 'ReactiveForm',
     component: LoandetailsReactiveComponent
   }
-  
+
 
 ];
 
